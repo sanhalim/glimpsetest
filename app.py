@@ -18,10 +18,10 @@ def home():
 
 @app.route('/matches/<user>/<match>')
 def matches(user, match=None):
-    if request.method == 'POST':
-        if request.form.name == 'tryagain':
+    if form.validate_on_submit():
+        if form.again.data == True:
             return render_template('matches.html', user=user, match=find_new_match(user))
-        if request.form.name == 'exit':
+        else:
             return redirect('/')
     return render_template('matches.html', user=user, match=match)
 

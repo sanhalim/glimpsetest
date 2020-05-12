@@ -3,8 +3,20 @@
         <title>Matcher</title>
     </head>
     <body>
-        <h1>Welcome to Matcher!</h1>
+    	{% if match %}
+    	<h3>You do not have a match. Try again?</h3>
+    	{% else %}
+        <h3>You have matched with {{ match }} !</h3>
+        {% end if %}
 
-        
+      	<br/>
+      	<br/>
+
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+	        <p> {{ form.again }} <br>
+	            {{ form.exit}}
+	        </p>
+    	</form>
     </body>
 </html>
