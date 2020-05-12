@@ -3,12 +3,11 @@
         <title>Matcher</title>
     </head>
     <body>
-    	{% if match %}
+    	{% if match == "None" %}
     	<h3>You do not have a match. Try again?</h3>
     	{% else %}
         <h3>You have matched with {{ match }} !</h3>
-        {% end if %}
-
+        {% endif %}
       	<br/>
       	<br/>
 
